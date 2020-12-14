@@ -3,7 +3,7 @@ const app = express();
 const httpserver = require('http').createServer(app);
 const io = require('socket.io')(httpserver);
 
-var buses = {};
+var buses = [];
 
 io.on('connection',async(socket)=>{
     await socket.on('user',async(data)=>{
